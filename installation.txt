@@ -1,0 +1,9 @@
+python3 -m venv venv
+source venv/bin/activate
+pip install cryptography
+pip freeze > requirements.txt
+python main.py sign fichier.txt
+
+python main.py generate-key
+python main.py sign fichier.txt
+python main.py verify fichier.txt signatures/fichier.txt.sig
