@@ -3,7 +3,7 @@ import os
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 
-# 📁 dossiers
+#  dossiers
 KEYS_DIR = "keys"
 SIG_DIR = "signatures"
 
@@ -11,7 +11,7 @@ os.makedirs(KEYS_DIR, exist_ok=True)
 os.makedirs(SIG_DIR, exist_ok=True)
 
 
-# 🔑 Génération des clés
+#  Génération des clés
 def generate_keys():
     private_key = rsa.generate_private_key(
         public_exponent=65537,
@@ -65,7 +65,7 @@ def sign_file(file_path):
     print(f"✅ Signature créée : {sig_path}")
 
 
-# ✅ Vérification
+#  Vérification
 def verify_file(file_path, sig_path):
     # charger clé publique
     with open(f"{KEYS_DIR}/public.pem", "rb") as f:
@@ -91,7 +91,7 @@ def verify_file(file_path, sig_path):
         print("❌ Signature INVALIDE")
 
 
-# 🖥️ CLI
+# CLI
 def main():
     parser = argparse.ArgumentParser(description="CLI Signature Numérique")
 
