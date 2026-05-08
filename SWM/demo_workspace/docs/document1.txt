@@ -1,0 +1,2 @@
+Hello, signtool! This is document 1.
+TAMPERED CONTENT
